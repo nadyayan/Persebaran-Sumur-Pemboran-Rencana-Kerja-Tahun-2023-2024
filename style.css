@@ -1,0 +1,134 @@
+html, body, #viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+#titleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #fd0017, #0073fe, #9fe400);
+  color: white;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: clamp(14px, 1.5vw, 18px);
+  z-index: 10;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+#titleText {
+  flex: 1;
+  text-align: center;
+}
+
+#titleDiv img {
+  height: 38px;
+  width: auto;
+  margin-right: 40px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+#titleDiv img:hover {
+  transform: scale(1.1);
+}
+
+/* POPUP */
+.esri-popup__main-container {
+  max-width: 350px;
+  max-height: 320px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.esri-popup__content {
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.esri-popup--is-docked {
+  max-width: 280px;
+  max-height: 320px;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  right: auto;
+  bottom: auto;
+}
+
+/* WIDGET POSISI SUPAYA TIDAK KETABRAK HEADER */
+.esri-ui-top-left,
+.esri-ui-top-right {
+  top: 65px;
+}
+
+/* LEGEND & BASEMAP GALLERY STYLE */
+.esri-legend,
+.esri-basemap-gallery {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 220px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* HP */
+@media (max-width: 600px) {
+  #titleDiv {
+    height: 70px; 
+    flex-direction: column;
+    padding: 6px 8px;
+    text-align: center;
+  }
+
+  #titleDiv img {
+    height: 26px;
+    margin: 5px 0 0 0;
+  }
+
+  #titleText {
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .esri-popup__main-container {
+    max-width: 90vw;
+    max-height: 60vh;
+    font-size: 11px;
+  }
+
+  .esri-popup--is-docked {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .esri-ui-top-left,
+  .esri-ui-top-right {
+    top: 80px;
+  }
+
+  .esri-legend,
+  .esri-basemap-gallery {
+    max-width: 160px;
+    max-height: 200px;
+    font-size: 11px;
+    padding: 8px;
+  }
+}
